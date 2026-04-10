@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bloom & Co. – Tiệm Hoa Tươi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:i…400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#">🌸 For You</a>
+    <ul class="nav-links">
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#products">Sản phẩm</a></li>
+      <li><a href="#about">Về chúng tôi</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-cart" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="btn-login" onclick="showModal('login')">Đăng nhập</button>
+    </div>
+    <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Trang chủ</a>
+    <a href="#products">Sản phẩm</a>
+    <a href="#about">Về chúng tôi</a>
+    <a href="#contact">Liên hệ</a>
+    <button class="btn-login" onclick="showModal('login')">Đăng nhập</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-sub">Tươi mỗi ngày · Giao tận nơi</p>
+    <h1 class="hero-title">Hoa tươi <em>đẹp nhất</em><br/>cho mọi khoảnh khắc</h1>
+    <p class="hero-desc">Chúng tôi mang đến những bó hoa tươi thắm, được chọn lựa kỹ càng, giao đến tay bạn trong ngày.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Khám phá ngay</a>
+      <a href="#contact" class="btn-outline">Liên hệ đặt hàng</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <div class="flower-card-big">
+      <div class="flower-emoji-big">💐</div>
+      <p>Bó hoa hồng đỏ đặc biệt</p>
+      <span>850.000đ</span>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="container">
+    <div class="cat-pills">
+      <button class="pill active" onclick="filterCategory('all', this)">Tất cả</button>
+      <button class="pill" onclick="filterCategory('rose', this)">🌹 Hoa hồng</button>
+      <button class="pill" onclick="filterCategory('lily', this)">🌷 Hoa ly</button>
+      <button class="pill" onclick="filterCategory('sunflower', this)">🌻 Hướng dương</button>
+      <button class="pill" onclick="filterCategory('orchid', this)">🌺 Lan</button>
+      <button class="pill" onclick="filterCategory('mixed', this)">💐 Hỗn hợp</button>
+    </div>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+<div class="container">
+    <div class="section-header">
+      <h2>Bộ sưu tập hoa</h2>
+      <p>Những bó hoa tươi đẹp nhất dành cho bạn</p>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm hoa..." oninput="searchProducts()"/>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>Về <em>For You; Co.</em></h2>
+      <p>Chúng tôi là tiệm hoa tươi với hơn 10 năm kinh nghiệm, luôn đặt chất lượng và sự hài lòng của khách hàng lên hàng đầu.</p>
+      <ul class="about-list">
+        <li>🌸 Hoa tươi hằng ngày từ vườn</li>
+        <li>🚚 Giao hàng nhanh trong 2 giờ</li>
+        <li>🎁 Thiết kế theo yêu cầu riêng</li>
+        <li>⭐ Hơn 5000 khách hàng hài lòng</li>
+      </ul>
+    </div>
+    <div class="about-stats">
+      <div class="stat"><span>10+</span><p>Năm kinh nghiệm</p></div>
+      <div class="stat"><span>5K+</span><p>Khách hàng</p></div>
+      <div class="stat"><span>50+</span><p>Loại hoa</p></div>
+      <div class="stat"><span>2h</span><p>Giao hàng</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Liên hệ đặt hoa</h2>
+    <form class="contact-form" onsubmit="submitContact(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Họ và tên *" required id="cName"/>
+        <input type="tel" placeholder="Số điện thoại *" required id="cPhone"/>
+      </div>
+      <input type="text" placeholder="Địa chỉ giao hoa *" required id="cAddress"/>
+      <textarea placeholder="Ghi chú (loại hoa, dịp đặc biệt...)" id="cNote" rows="4"></textarea>
+      <button type="submit" class="btn-primary">Gửi yêu cầu đặt hoa 🌸</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <h3>🌸For You</h3>
+      <p>Mang hoa tươi đến mọi khoảnh khắc đặc biệt của bạn.</p>
+    </div>
+    <div>
+      <h4>Liên kết</h4>
+      <ul>
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#products">Sản phẩm</a></li>
+        <li><a href="#about">Về chúng tôi</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <p>📞 0901 234 567</p>
+      <p>📧 admin@gmail.com</p>
+      <p>📍 123 Mỹ Xuyên, Long Xuyên, An Giang</p>
+    </div>
+  </div>
+  <p class="footer-copy">© 2025 For You. – All rights reserved.</p>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>🛒 Giỏ hàng</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+<p class="cart-empty">Giỏ hàng trống 🌸</p>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">Tổng: <strong id="cartTotal">0đ</strong></div>
+    <button class="btn-primary" onclick="checkout()">Đặt hàng ngay</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div id="loginForm">
+    <h2>Đăng nhập</h2>
+    <input type="email" placeholder="Email" id="loginEmail"/>
+    <input type="password" placeholder="Mật khẩu" id="loginPassword"/>
+    <button class="btn-primary" onclick="login()">Đăng nhập</button>
+    <p class="modal-switch">Chưa có tài khoản? <a href="#" onclick="showModal('register')">Đăng ký</a></p>
+  </div>
+  <div id="registerForm" style="display:none">
+    <h2>Đăng ký</h2>
+    <input type="text" placeholder="Họ tên" id="regName"/>
+    <input type="email" placeholder="Email" id="regEmail"/>
+    <input type="password" placeholder="Mật khẩu" id="regPassword"/>
+    <button class="btn-primary" onclick="register()">Đăng ký</button>
+    <p class="modal-switch">Đã có tài khoản? <a href="#" onclick="showModal('login')">Đăng nhập</a></p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
