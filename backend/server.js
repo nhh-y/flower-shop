@@ -13,7 +13,7 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/orders',   require('./routes/orders'));
 app.use('/api/contact',  require('./routes/contact'));
 
-app.get('/', (req, res) => res.json({ message: '🌸 Bloom & Co. API đang chạy!' }));
+app.get('/', (req, res) => res.json({ message: '🌸 For You API đang chạy!' }));
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {

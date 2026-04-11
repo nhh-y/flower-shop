@@ -11,8 +11,8 @@
   --light:   #fff;
   --shadow:  0 4px 24px rgba(60,20,30,.10);
   --radius:  16px;
-  --ff-head: 'Playfair Display', Georgia, serif;
-  --ff-body: 'DM Sans', sans-serif;
+  --ff-head:  Georgia, serif;
+  --ff-body: 'Arial', sans-serif;
 }
 
 html { scroll-behavior: smooth; }

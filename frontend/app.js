@@ -1,5 +1,5 @@
 /* =============================================
-Bloom & Co. – app.js
+For You – app.js
 Kết nối với backend API (Node.js + MongoDB)
 ============================================= */
 
@@ -29,9 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 renderProducts(allProducts);
 updateCartUI();
 updateNavUser();
-fetchProductsFromAPI(); // Thử fetch từ backend nếu có
+fetchProductsFromAPI(); 
 
-// Navbar scroll effect
 window.addEventListener('scroll', () => {
 document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
 });
