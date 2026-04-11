@@ -125,7 +125,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 80% at 70% 50%, #fce4ee 0%, var(--cream) 70%);
+  background: vả(--cream);
   z-index: 0;
 }
 .hero::before {
