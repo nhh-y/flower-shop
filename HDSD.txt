@@ -1,0 +1,31 @@
+HƯỚNG DẪN SỬ DỤNG – TRANG WEB BÁN HOA "FOR YOU"
+=================================================
+
+LINK TRUY CẬP:
+- Trang web: https://flower-shop-git-main-nhh-ys-projects.vercel.app
+- API: https://flower-shop-offs.onrender.com
+
+TÀI KHOẢN ĐĂNG NHẬP:
+- Admin: admin@gmail.com / admin123
+- User:  nhuy@gmail.com  / user123
+
+CHỨC NĂNG CHÍNH:
+1. Xem danh sách hoa theo danh mục
+2. Tìm kiếm hoa theo tên
+3. Thêm hoa vào giỏ hàng
+4. Tăng/giảm số lượng trong giỏ
+5. Đặt hàng (cần đăng nhập)
+6. Đăng ký / Đăng nhập tài khoản
+7. Gửi yêu cầu liên hệ đặt hoa
+
+MÔ TẢ CƠ SỞ DỮ LIỆU (MongoDB Atlas):
+- users:    lưu tài khoản người dùng
+- products: lưu thông tin sản phẩm hoa
+- orders:   lưu đơn hàng
+- contacts: lưu yêu cầu liên hệ
+
+CÔNG NGHỆ SỬ DỤNG:
+- Frontend: HTML, CSS, JavaScript
+- Backend:  Node.js, Express.js
+- Database: MongoDB Atlas (cloud)
+- Deploy:   Render (backend), Vercel (frontend)
