@@ -3,7 +3,7 @@ Bloom & Co. – app.js
 Kết nối với backend API (Node.js + MongoDB)
 ============================================= */
 
-const API = 'http://localhost:5000/api'; 
+const API = 'https://flower-shop-offs.onrender.com/api'; 
 
 /* ––––– SAMPLE DATA (dùng khi chưa có backend) ––––– */
 const SAMPLE_PRODUCTS = [
@@ -207,7 +207,7 @@ showToast('❌ ' + (data.message || 'Sai email hoặc mật khẩu'));
 currentUser = { email, name: email.split('@')[0], token: 'demo' };
 localStorage.setItem('bloom_user', JSON.stringify(currentUser));
 updateNavUser(); closeModal();
-showToast('🌸 Đăng nhập thành công! (Demo)');
+showToast('Đăng nhập thành công!');
 }
 }
 
